@@ -53,13 +53,13 @@ def vigenere_encrypt(plain, keyword):
     print(f'plain text: {plain}')
     print(f'keyword: {keyword}')
     print(f'cipher text: {cipher_text}')
-    return cipher_text
+    return cipher_text.upper()
     
     
 	
 def vigenere_decrypt(cipher, keyword):
     key = generateKey(cipher.upper(), keyword.upper())
     plain_text = originalText(cipher.upper(), key)
-    return plain_text
+    return plain_text.lower()
 # vigenere_encrypt('ahmed', 'play')
 # vigenere_decrypt('psmcs', 'play')

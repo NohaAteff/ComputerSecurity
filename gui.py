@@ -50,6 +50,7 @@ def selected(event):
     else:
         keylabel.grid(row=5,column=1)
         keyEntry.grid(row=5,column=2,columnspan=2)
+key1label = Label(window,)
 def encrypt():
     line.grid(row=7,column=2,columnspan=3,padx=10,pady=10)
     cipherEntry.delete(0,'end')
@@ -76,8 +77,11 @@ def encrypt():
             cipherEntry.grid(row=8,column=3,padx=(0,150),pady=10)
             cipherEntry.insert(0,a)
         elif chooseMethod.get() == 'DES':
-            a,_ = des.encryption(ptEntry.get())
+            a,_,key1,key2 = des.encryption(ptEntry.get())
             print(a)
+            ciphertextLabel.grid(row=8,column=1,padx=(10,0),pady=10)
+            cipherEntry.grid(row=8,column=3,padx=(0,150),pady=10)
+            cipherEntry.insert(0,a)
         elif chooseMethod.get() == 'Polyalphabetic (viginere)':
             a = viginere.vigenere_encrypt(ptEntry.get(),keyEntry.get())
             print(a)

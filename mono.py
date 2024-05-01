@@ -20,7 +20,7 @@ def monoalphabetic_encrypt(plaintext,key):
             encr+=mono[i]
     cipher = "".join(map(str,encr))
     # print("".join(map(str,en)))
-    return cipher
+    return cipher.upper()
 
 def monoalphabetic_decrypt(cipher,key):
     alphabet = "abcdefghijklmnopqrstuvwxyz"
@@ -39,7 +39,7 @@ def monoalphabetic_decrypt(cipher,key):
             if value == char:
                 plaintext += key
                 break
-    return plaintext
+    return plaintext.lower()
 
 # print(monoalphabetic_encrypt('monoalphabetic','mnbvcxzasdfghjklpoiuytrewq'))
 # print(monoalphabetic_decrypt('hkjkmglamncusb','mnbvcxzasdfghjklpoiuytrewq'))
